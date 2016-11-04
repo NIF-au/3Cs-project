@@ -1,6 +1,5 @@
 # 3Cs-project
 
-Test test
 
 # Software requirements
 
