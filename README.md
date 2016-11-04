@@ -1,5 +1,16 @@
 # 3Cs-project
 
+This project was made with a focus on contrast stretching of blockface images, stacking and registration. With the code you are able to:
+
+- Convert images from RAW to png and with a downsampling of 25 % 
+- Semi manual cropping of the images 
+- Segmentation of the brain with either converting the images to CMYK and performing an Otsu on the mergenta channel or performing an Otsu on the original PNG image
+- Simple alignment with translation 
+- Contrast enhancement with the method CLAHE together with a sharpening of the images 
+- Stacking of the images with defined dimensions and creation of nifti files
+- Rigid, Affine and SyN registraion with options to change parameters
+
+To run the project, simply run CMenu in MATLAB.
 
 # Software requirements
 
