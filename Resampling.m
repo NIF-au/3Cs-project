@@ -27,24 +27,20 @@ if selection == 3
     % Saving the list of .png files of the given Dir in the Imgs variable
     Imgs = dir(fullfile(Dir, '*.png'));
     for_print_only = imread(fullfile(Dir, Imgs(1).name));
-    print_x = num2str(length(for_print_only(:,1,1)));
-    print_y = num2str(length(for_print_only(1,:,1)));
-    print_z = num2str(length(Imgs));
     
-    %valta se kamia metavlhth gia na mhn kaneis oti kaneis sto 41
 else
     mri = load_nii(Dir);
     Imgs = mri.img;
-    print_x = num2str(length(Imgs(:,1,1)));
-    print_y = num2str(length(Imgs(1,:,1)));
-    print_z = num2str(length(Imgs(1,1,:)));
 end
 
 %=================================MENU====================================%
 prompt = {'Resampling dimensions', 'Voxel size', 'New file name'};
 dlg_title = 'Enter the parameter values';
-num_lines = 1;
-defaultans = {[print_x, ' ', print_y, ' ', print_z], '0.015 0.021 0.021' [pwd, 'New.nii']};
+if selection == 3
+    defaultans = {[num2str(length(for_print_only(:,1,1))), ' ', num2str(length(for_print_only(1,:,1))), ' ', num2str(length(Imgs))], '0.018 0.02 0.02', [pwd, 'New.nii']};
+else
+    defaultans = {[num2str(length(Imgs(:,1,1))), ' ', num2str(length(Imgs(1,:,1))), ' ', num2str(length(Imgs(1,1,:)))], '0.015 0.015 0.015', [pwd, 'New.nii']};
+end
 answer = inputdlg(prompt,dlg_title,[1, 50],defaultans);
 %=========================================================================%
 
@@ -71,7 +67,7 @@ for slice = length(Imgs): -1 : 1
         if selection == 3
             thisSlice=imread(fullfile(Dir, Imgs(slice).name));
         else
-            I = img(:,:,slice);
+            I = Imgs(:,:,slice);
 
             % shift data such that the smallest element of A is 0
             I=I-min(I(:));                                                  
