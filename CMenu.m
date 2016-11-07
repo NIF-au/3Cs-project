@@ -22,7 +22,7 @@ cd([pwd '/code']);
 x=0;
 while x~=6
     %===================================MENU==============================%
-    x = input(sprintf (['\nPlease select one of the following functions you want to use:\n' ...
+    x = input(sprintf (['\nSelect one of the following functions you want to use:\n' ...
           '1. Convert RAW file to PNG\n2. Segmentation Menu\n3. Blockface Resize\n' ...
           '4. MRI Resize\n5. Registration Menu\n6. Exit\n']));
     %=====================================================================%
@@ -70,4 +70,5 @@ while x~=6
         cd '..'
         return
     end
+    fprintf('\n\nDone...........\n')
 end
