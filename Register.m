@@ -1,4 +1,4 @@
-function Register(tm, ri, transform,  fixed, moving, metric)
+function Register(tm, ri, transform,  fixed, moving, metric, reg)
 
 % Description here.....
 % tm: Path for transformation Matrix.
@@ -11,7 +11,25 @@ function Register(tm, ri, transform,  fixed, moving, metric)
 % moving: Path for moving images
 %   Example: 'path/cmyk_rigid_reg.nii'
 % metric:    Can be 'MI' or 'CC'.
+% A description of the antsRegistration can be found here: 
+% https://github.com/stnava/ANTs/wiki/Anatomy-of-an-antsRegistration-call
 
+% Catharina Maria Hamer Holland - holland.cat@hotmail.com
+% Christoffer Gøthgen - cgathg11@student.aau.dk
+% Christos Zoupis Schoinas - xzoupis@gmail.com
+% Andrew Janke - a.janke@gmail.com
+% 
+% Copyright 
+% Catharina Maria Hamer Holland, Aalborg University.
+% Christoffer Gøthgen, Aalborg University.
+% Christos Zoupis Schoinas, Aalborg University.
+% Andrew Janke, The University of Queensland.
+% Permission to use, copy, modify, and distribute this software and its
+% documentation for any purpose and without fee is hereby granted,
+% provided that the above copyright notice appear in all copies.  The
+% authors and the Universities make no representations about the
+% suitability of this software for any purpose.  It is provided "as is"
+% without express or implied warranty.
 
 
 %===================================MENU==================================%
