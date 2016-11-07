@@ -47,7 +47,7 @@ while sum(inputsOK) < 6 && answr ~= 7
           end
           tmn = input(sprintf ('Transformation Matrix name: '), 's');
           %=======================================================%
-          tm = fullfile(out_dir,tmn)
+          tm = fullfile(out_dir,tmn);
           inputsOK(1) = 1;
       elseif answr == 2
           %=====================MENU==============================%

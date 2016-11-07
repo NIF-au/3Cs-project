@@ -29,7 +29,6 @@ Imgs = dir(fullfile(Dir, '*.png'));
 MiddleImage = length(Imgs)/2;
 ImageForRectangular=imread(fullfile(Dir, Imgs(MiddleImage).name));
 [NotNeeded, rect] = imcrop(ImageForRectangular);
-ImageForRectangular = imcrop(ImageForRectangular,[rect(1),rect(2),rect(3),rect(4)]);
 
 % Checking if the folder exists, if not it is created
 NewFolder = strcat(Dir,'/Cropped Images');

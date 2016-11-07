@@ -46,12 +46,15 @@ if any(x==6) && length(x)>1
    disp('\nYou cannot select the 6th option in combination with others')
    return
 elseif any(x==2) || any(x==3 || any(x==6))
-   SegmentMethod=input(sprintf (['\nSelect one of the following methods:\n' ...
-       'For OTSU method: otsu\nFor CMYK method: cmyk\n']), 's');
+   SegmentMethod = ' ';
+   while ~(strcmpi(SegmentMethod,'otsu') || strcmpi(SegmentMethod,'cmyk'))
+       SegmentMethod=input(sprintf (['\nSelect one of the following methods:\n' ...
+           'For OTSU method: otsu\nFor CMYK method: cmyk\n']), 's');
+   end
    
    answer=input(sprintf ('\nDefault smoothing mask size is [7 7], do you want to change it? [y/n]:'), 's');
    if strcmpi(answer, 'y')
-       SmoothingMask=input(sprintf ('\nInsert number for the size...\n'));
+       SmoothingMask=input(sprintf ('\nInsert number for the size (only one number needed)...\n'));
    elseif strcmpi(answer, 'n')
        SmoothingMask = 7;
    else
@@ -60,10 +63,6 @@ elseif any(x==2) || any(x==3 || any(x==6))
    end
 end
 
-if ~(strcmpi(SegmentMethod,'otsu') || strcmpi(SegmentMethod,'cmyk'))
-   disp('\nError. SegmentMethod needs to be either ''otsu'' or ''cmyk''. Type help Segment for more information!')
-   return
-end
 
 
 for i=1:length(x)
