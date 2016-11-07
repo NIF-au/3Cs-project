@@ -13,6 +13,23 @@ function Segment(Dir)
 % They will all be created automatically if they are not already there. 
 % If they are, the folders are first cleared.
 
+% Catharina Maria Hamer Holland - holland.cat@hotmail.com
+% Christoffer Gøthgen - cgathg11@student.aau.dk
+% Christos Zoupis Schoinas - xzoupis@gmail.com
+% Andrew Janke - a.janke@gmail.com
+% 
+% Copyright 
+% Catharina Maria Hamer Holland, Aalborg University.
+% Christoffer Gøthgen, Aalborg University.
+% Christos Zoupis Schoinas, Aalborg University.
+% Andrew Janke, The University of Queensland.
+% Permission to use, copy, modify, and distribute this software and its
+% documentation for any purpose and without fee is hereby granted,
+% provided that the above copyright notice appear in all copies.  The
+% authors and the Universities make no representations about the
+% suitability of this software for any purpose.  It is provided "as is"
+% without express or implied warranty.
+
 x=input(sprintf (['\nPlease select which of the following functions you want to use:\n' ...
       '(if you choose more than one option, put the options in brackets! Eg. [1 3 5])\n' ...
       '1. Crop Images\n2. Segment Images\n3. Align Images\n' ...
