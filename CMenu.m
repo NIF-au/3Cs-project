@@ -17,8 +17,13 @@ function CMenu
 % suitability of this software for any purpose.  It is provided "as is"
 % without express or implied warranty.
 
+cd ([pwd '/code'])
+system('dir')
+
+
+
 x=0;
-while x~=7
+while x~=6
     %===================================MENU==============================%
     x = input(sprintf (['\nPlease select one of the following functions you want to use:\n' ...
           '1. Convert RAW file to PNG\n2. Segmentation Menu\n3. Blockface Resize\n' ...
@@ -65,6 +70,7 @@ while x~=7
 
         Register(tm, ri, transform,  fix, mov, metric, reg)
     else
+        cd '..'
         return
     end
 end
