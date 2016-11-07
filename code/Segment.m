@@ -33,11 +33,13 @@ function Segment(Dir)
 x=input(sprintf (['\nPlease select which of the following functions you want to use:\n' ...
       '(if you choose more than one option, put the options in brackets! Eg. [1 3 5])\n' ...
       '1. Crop Images\n2. Segment Images\n3. Align Images\n' ...
-      '4. Contrast Stretch Images\n5. Sharpen Images\n6. All of the above\n' ]));
+      '4. Contrast Stretch Images\n5. Sharpen Images\n6. All of the above\n7.Exit this menu\n' ]));
 
-if any(x>6) || any(x<1)
+if any(x>7) || any(x<1)
    disp('Wrong choice(s)')
    return
+elseif any(x==7)
+    return
 end
 
 if any(x==6) && length(x)>1
@@ -47,9 +49,9 @@ elseif any(x==2) || any(x==3 || any(x==6))
    SegmentMethod=input(sprintf (['\nSelect one of the following methods:\n' ...
        'For OTSU method: otsu\nFor CMYK method: cmyk\n']), 's');
    
-   answer=input(sprintf (['\nDefault smoothing mask size is [7 7], do you want to change it? [y/n]:']), 's');
+   answer=input(sprintf ('\nDefault smoothing mask size is [7 7], do you want to change it? [y/n]:'), 's');
    if strcmpi(answer, 'y')
-       SmoothingMask=input(sprintf (['\nInsert number for the size...\n']));
+       SmoothingMask=input(sprintf ('\nInsert number for the size...\n'));
    elseif strcmpi(answer, 'n')
        SmoothingMask = 7;
    else
