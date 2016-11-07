@@ -1,5 +1,8 @@
 function mat_rs = resize(varargin)
-%RESIZE     Resize a matrix.
+% Code found on:
+% http://stackoverflow.com/questions/12520152/resizing-3d-matrix-image-in-matlab
+
+
 
 % DESCRIPTION:
 %       Resize a matrix to a given size using interp2 (2D) or interp3
