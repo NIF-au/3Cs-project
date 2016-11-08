@@ -23,7 +23,7 @@ if strfind(PATH, 'data/lfs2/software/ubuntu14/minc-itk4-1.9.11-20160202/bin')
 end
 
 LIB = getenv('LD_LIBRARY_PATH');
-if strfind(PATH, 'data/lfs2/software/ubuntu14/minc-itk4-1.9.11-20160202/lib')
+if strfind(LIB, 'data/lfs2/software/ubuntu14/minc-itk4-1.9.11-20160202/lib')
     setenv('LD_LIBRARY_PATH', [LIB ':/data/lfs2/software/ubuntu14/minc-itk4-1.9.11-20160202/lib']);
 end
 
