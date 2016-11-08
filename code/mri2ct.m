@@ -16,11 +16,16 @@ function mri2ct()
 % authors and the Universities make no representations about the
 % suitability of this software for any purpose.  It is provided "as is"
 % without express or implied warranty.
+
 PATH = getenv('PATH');
-setenv('PATH', [PATH ':/data/lfs2/software/ubuntu14/minc-itk4-1.9.11-20160202/bin']);
+if strfind(PATH, 'data/lfs2/software/ubuntu14/minc-itk4-1.9.11-20160202/bin')
+    setenv('PATH', [PATH ':/data/lfs2/software/ubuntu14/minc-itk4-1.9.11-20160202/bin']);
+end
 
 LIB = getenv('LD_LIBRARY_PATH');
-setenv('LD_LIBRARY_PATH', [LIB ':/data/lfs2/software/ubuntu14/minc-itk4-1.9.11-20160202/lib']);
+if strfind(PATH, 'data/lfs2/software/ubuntu14/minc-itk4-1.9.11-20160202/lib')
+    setenv('LD_LIBRARY_PATH', [LIB ':/data/lfs2/software/ubuntu14/minc-itk4-1.9.11-20160202/lib']);
+end
 
 fprintf('Select the NifTi file with the CT images\n')
 [CTName,ctpath] = uigetfile('*.nii','Select the NifTi file with CT images');
