@@ -37,24 +37,24 @@ mincresample -like MRImnc.mnc -transformation $TRM CTmnc.mnc after_resample.mnc
 
 mnc2nii after_resample.mnc NewCT.nii
 
-RTMPATH=$(zenity --file-selection --directory --title="Select the directory to store the transformation matrix of the Rigid Registration" --filename=$HOME/Desktop/)
+RTMPATH=$(zenity --file-selection --directory --title="Select the directory to store the transformation matrix of the Rigid Registration" --filename=pwd)
 
 echo "Select the name of the transformation matrix"
 read RTM
 
-RNiiPATH=$(zenity --file-selection --directory --title="Select the directory to store the NifTi file from the Rigid Registration" --filename=$HOME/Desktop/)
+RNiiPATH=$(zenity --file-selection --directory --title="Select the directory to store the NifTi file from the Rigid Registration" --filename=pwd)
 
 echo "Select the name of the transformation matrix(do NOT forget the 'nii')"
 read RNii
 
 antsRegistration --dimensionality 3 --float 0 --output [$RTMPATH/$RTM, $RNiiPATH/$RNii] --interpolation Linear --winsorize-image-intensities [0.005,0.995] --use-histogram-matching 0 --transform Rigid[0.1] --metric MI[NewCT.nii,$MRI,1,32,Regular,0.25] --convergence [1000x500x250x100,1e-6,10] --shrink-factors 8x4x2x1 --smoothing-sigmas 3x2x1x0vox --verbose
 
-ATMPATH=$(zenity --file-selection --directory --title="Select the directory to store the transformation matrix of the Affine Registration" --filename=$HOME/Desktop/)
+ATMPATH=$(zenity --file-selection --directory --title="Select the directory to store the transformation matrix of the Affine Registration" --filename=pwd)
 
 echo "Select the name of the transformation matrix"
 read ATM
 
-ANiiPATH=$(zenity --file-selection --directory --title="Select the directory to store the NifTi file from the Affine Registration" --filename=$HOME/Desktop/)
+ANiiPATH=$(zenity --file-selection --directory --title="Select the directory to store the NifTi file from the Affine Registration" --filename=pwd)
 
 echo "Select the name of the transformation matrix(do NOT forget the 'nii')"
 read ANii
@@ -62,12 +62,12 @@ read ANii
 
 antsRegistration --dimensionality 3 --float 0 --output [$ATMPATH/$ATM, $ANiiPATH/$ANii] --interpolation Linear --winsorize-image-intensities [0.005,0.995] --use-histogram-matching 0 --transform Affine[0.1] --metric MI[NewCT.nii, $RNiiPATH/$RNii,1,32,Regular,0.25] --convergence [1000x500x250x100,1e-6,10] --shrink-factors 8x4x2x1 --smoothing-sigmas 3x2x1x0vox --verbose
 
-STMPATH=$(zenity --file-selection --directory --title="Select the directory to store the transformation matrix of the SyN Registration" --filename=$HOME/Desktop/)
+STMPATH=$(zenity --file-selection --directory --title="Select the directory to store the transformation matrix of the SyN Registration" --filename=pwd)
 
 echo "Select the name of the transformation matrix"
 read STM
 
-SNiiPATH=$(zenity --file-selection --directory --title="Select the directory to store the NifTi file from the SyN Registration" --filename=$HOME/Desktop/)
+SNiiPATH=$(zenity --file-selection --directory --title="Select the directory to store the NifTi file from the SyN Registration" --filename=pwd)
 
 echo "Select the name of the transformation matrix(do NOT forget the 'nii')"
 read SNii
