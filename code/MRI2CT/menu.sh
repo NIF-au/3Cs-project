@@ -1,18 +1,19 @@
 #!/bin/bash
 
-declare -i choice= 0
-declare out_dir = " ";
+declare -i choice=0
+declare out_dir=" ";
 declare -a inputsOK=(0 0 0 0 0 0)
 declare -a menu=("1. Set Transformation Matrix Name" "2. Set Registered Image Name" "3. Select transformation method" "4. Select fixed images" "5. Select moving images" "6. Choose Metric")
 
 while [ $choice -ne 7 ]  
 do
 	echo "Please select the input you want to add:
-	      WARNING: Make sure the paths do not include spaces or parentheses!!"
+	WARNING: Make sure the paths do not include spaces or parentheses!!"
 	
-	for i in "${inputsOK[@]}"
+	
+	for (( i=0; i<${#inputsOK[@]}; i++ ));
 	do
-          if ${inputsOK[i]}==0
+          if [ ${inputsOK[i]} -eq 0 ]
 	  then
               echo ${menu[i]}
 
