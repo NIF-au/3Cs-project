@@ -1,4 +1,4 @@
-#!/bin/bash
+i#!/bin/bash
 
 declare -i choice=0
 declare out_dir=" ";
@@ -8,7 +8,7 @@ declare -a menu=("1. Set Transformation Matrix Name" "2. Set Registered Image Na
 while [ $choice -ne 7 ]  
 do
 	echo "Please select the input you want to add:
-	WARNING: Make sure the paths do not include spaces or parentheses!!"
+	      WARNING: Make sure the paths do not include spaces or parentheses!!"
 	
 	
 	for (( i=0; i<${#inputsOK[@]}; i++ ));
@@ -31,7 +31,10 @@ do
 
 	1)
 
-		echo "1s choice $choice";;
+		if [[ $out_dir != *[!\ ]* ]]
+		then
+			out_dir=$(zenity --file-selection --directory --title="Select the path for the output files" --filename=pwd)
+		fi ;;
 
 	2)
 
