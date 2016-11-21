@@ -1,13 +1,13 @@
 function CMenu
 
 % Catharina Maria Hamer Holland - holland.cat@hotmail.com
-% Christoffer Gøthgen - cgathg11@student.aau.dk
+% Christoffer GÃ¸thgen - cgathg11@student.aau.dk
 % Christos Zoupis Schoinas - xzoupis@gmail.com
 % Andrew Janke - a.janke@gmail.com
 % 
 % Copyright 
 % Catharina Maria Hamer Holland, Aalborg University.
-% Christoffer Gøthgen, Aalborg University.
+% Christoffer GÃ¸thgen, Aalborg University.
 % Christos Zoupis Schoinas, Aalborg University.
 % Andrew Janke, The University of Queensland.
 % Permission to use, copy, modify, and distribute this software and its
@@ -24,9 +24,9 @@ while x~=6
     %===================================MENU==============================%
     x = input(sprintf (['\nSelect one of the following functions you want to use:\n' ...
           '1. Convert RAW file to PNG\n2. Segmentation Menu\n3. Blockface Resize\n' ...
-          '4. MRI Resize\n5. Registration Menu\n6. Exit\n']));
+          '4. MRI Resize\n5. Exit\n']));
     %=====================================================================%
-    if x<1 || x>6
+    if x<1 || x>5
         disp('Wrong choice')
         return
     elseif x==1
@@ -51,21 +51,7 @@ while x~=6
         end
         
         Resampling(Dir, x)
-    elseif x==5
-        %reg = 0;
-        %while reg < 1 || reg > 2
-        %    reg = input(sprintf(['Choose the registration type you want:\n', ...
-        %                        '1. Registration of Blockface to MRI\n', ...
-        %                        '2. Registration of MRI to CT\n']));
-        %end
-        
-        %if reg == 1
-            [tm, ri, transform,  fix, mov, metric] = preRegistration();
-        %else
-            
-        %end
 
-        Register(tm, ri, transform,  fix, mov, metric, reg)
     else
         cd '..'
         return
