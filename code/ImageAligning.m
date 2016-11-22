@@ -1,17 +1,17 @@
-function ImageAligning(Dir, SegmentMethod)
+function ImageAligning(Dir)
 % ImageAligning(Dir, SegmentMethod) get the Dir of the images and aligns
 % each one with the previous image.
 % SegmentMethod is required for selecting the right folder with the images
 % depending on the segmentation method used before.
 
 % Catharina Maria Hamer Holland - holland.cat@hotmail.com
-% Christoffer Gøthgen - cgathg11@student.aau.dk
+% Christoffer GÃ¸thgen - cgathg11@student.aau.dk
 % Christos Zoupis Schoinas - xzoupis@gmail.com
 % Andrew Janke - a.janke@gmail.com
 % 
 % Copyright 
 % Catharina Maria Hamer Holland, Aalborg University.
-% Christoffer Gøthgen, Aalborg University.
+% Christoffer GÃ¸thgen, Aalborg University.
 % Christos Zoupis Schoinas, Aalborg University.
 % Andrew Janke, The University of Queensland.
 % Permission to use, copy, modify, and distribute this software and its
@@ -30,11 +30,8 @@ else
     delete(fullfile(NewFolder,'*'));
 end
 
-if strcmpi(SegmentMethod,'otsu')
-    Dir = fullfile(Dir, '/OTSU Segmented Images');
-else
-    Dir = fullfile(Dir,'/CMYK Segmented Images');
-end
+Dir = fullfile(Dir,'/Segmented Images');
+
 
 % Saving the list of .png files of the given Dir in the Imgs variable
 Imgs = dir(fullfile(Dir, '*.png'));
