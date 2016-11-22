@@ -6,13 +6,13 @@ function CMYKMethod(Dir, SmoothingMask)
 % default neighborhood of [7 7].
 
 % Catharina Maria Hamer Holland - holland.cat@hotmail.com
-% Christoffer Gøthgen - cgathg11@student.aau.dk
+% Christoffer GÃ¸thgen - cgathg11@student.aau.dk
 % Christos Zoupis Schoinas - xzoupis@gmail.com
 % Andrew Janke - a.janke@gmail.com
 % 
 % Copyright 
 % Catharina Maria Hamer Holland, Aalborg University.
-% Christoffer Gøthgen, Aalborg University.
+% Christoffer GÃ¸thgen, Aalborg University.
 % Christos Zoupis Schoinas, Aalborg University.
 % Andrew Janke, The University of Queensland.
 % Permission to use, copy, modify, and distribute this software and its
@@ -30,7 +30,7 @@ C = makecform('srgb2cmyk');
 Imgs = dir(fullfile(fullfile(Dir, '/Cropped Images'), '*.png'));
 
 % Checking if the folder exists, if not it is created
-NewFolder = strcat(Dir,'/CMYK Segmented Images');
+NewFolder = strcat(Dir,'/Segmented Images');
 if exist(NewFolder)==0
     mkdir(NewFolder)
 else
