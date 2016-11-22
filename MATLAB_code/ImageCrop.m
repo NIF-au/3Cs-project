@@ -6,13 +6,13 @@ function ImageCrop(Dir)
 % 'Cropped Images'.
 
 % Catharina Maria Hamer Holland - holland.cat@hotmail.com
-% Christoffer Gøthgen - cgathg11@student.aau.dk
+% Christoffer GÃ¸thgen - cgathg11@student.aau.dk
 % Christos Zoupis Schoinas - xzoupis@gmail.com
 % Andrew Janke - a.janke@gmail.com
 % 
 % Copyright 
 % Catharina Maria Hamer Holland, Aalborg University.
-% Christoffer Gøthgen, Aalborg University.
+% Christoffer GÃ¸thgen, Aalborg University.
 % Christos Zoupis Schoinas, Aalborg University.
 % Andrew Janke, The University of Queensland.
 % Permission to use, copy, modify, and distribute this software and its
