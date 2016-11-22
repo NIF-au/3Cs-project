@@ -17,6 +17,7 @@ function segment_stuff(nii)
 % suitability of this software for any purpose.  It is provided "as is"
 % without express or implied warranty.
 
+cd .. 
 ct = load_nii(nii);
 img = ct.img;
 
