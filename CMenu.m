@@ -17,7 +17,7 @@ function CMenu
 % suitability of this software for any purpose.  It is provided "as is"
 % without express or implied warranty.
 
-cd([pwd '/code']);
+cd([pwd '/MATLAB_code']);
 
 x=0;
 while x~=6
