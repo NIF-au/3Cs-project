@@ -25,6 +25,7 @@ MRI=$(zenity --file-selection --file-filter='*.nii' --title="Select the NifTi fi
 cd MATLAB_code
 export PATH=/usr/local/MATLAB/R2015a/bin:$PATH
 matlab -nodesktop -nosplash -r "addpath /gv0/home/uqcgothg/Desktop/Nfiti; segment_stuff $CT; exit"
+cd ..
 
 nii2mnc CT_blur.nii CTmnc.mnc
 
